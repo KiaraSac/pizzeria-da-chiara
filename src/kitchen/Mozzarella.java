@@ -2,13 +2,18 @@ package kitchen;
 
 public class Mozzarella extends PizzaDecorator {
 
-	public Mozzarella(Ingredient i) {
+	public Mozzarella(Pizza i) {
 		super(i);
 	}
 	
 	@Override
-	public void addI() {
-		ingredient.getIngredientList().add(this);
-		this.ingredient.addI();
+	public String getDescription() {
+		return super.getDescription()+", Mozzarella";
 	}
+	
+//	@Override
+//	public void addIngredient() {
+//		ingredient.getIngredientList().add(this);
+//		this.ingredient.addIngredient();
+//	}
 }

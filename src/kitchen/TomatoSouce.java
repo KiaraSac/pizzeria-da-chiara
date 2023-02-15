@@ -2,14 +2,19 @@ package kitchen;
 
 public class TomatoSouce extends PizzaDecorator {
 
-	public TomatoSouce(Ingredient i) {
-		super(i);
+	public TomatoSouce(Pizza p) {
+		super(p);
 	}
 
 	@Override
-	public void addI() {
-		ingredient.getIngredientList().add(this);
-		this.ingredient.addI();
+	public String getDescription() {
+		return super.getDescription()+", Tomato Souce";
 	}
+
+//	@Override
+//	public void addIngredient() {
+//		ingredient.getIngredientList().add(this);
+//		this.ingredient.addIngredient();
+//	}
 
 }

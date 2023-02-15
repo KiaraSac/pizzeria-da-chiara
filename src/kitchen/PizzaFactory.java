@@ -5,7 +5,19 @@ import java.util.Collection;
 
 import order.Order;
 
-public class Kitchen {
+public interface PizzaFactory {
+	
+	//Pizza Factory - CREATOR
+	
+//	private Order order;
+//
+//	public Kitchen(Order order) {
+//		this.order = order;
+//	}
+	
+	public Pizza createPizza();
+	
+	
 //	//OBSERVABLE
 //	private Collection<Order> orderList;
 //	
@@ -20,7 +32,6 @@ public class Kitchen {
 //	public void notifyOrder() {
 //		orderList.forEach(o -> o.update());
 //	}
-//	
 	
 
 }

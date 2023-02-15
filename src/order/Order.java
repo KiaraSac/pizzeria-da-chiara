@@ -3,22 +3,27 @@ package order;
 import java.util.Collection;
 
 import delivery.Delivery;
-import kitchen.Ingredient;
+import kitchen.Pizza;
 import recipe.Recipe;
 
 public class Order {
 	//OBSERVable
-	private Collection<Ingredient> recipeList; //da cambiare con recipe
-	private Delivery delivery;
+	private Delivery delivery; //observer list
 	private int state;
+	private Collection<Pizza> pizzaList;
 	
 	//private String orderState;
 
-	public Order(Collection<Ingredient> recipeList) {
-		this.recipeList = recipeList;
+	public Order(Collection<Pizza> pizzaList,Delivery d) {
+		this.pizzaList = pizzaList;
+		this.addObserver(d);
+	}
+	
+	public Collection<Pizza> getPizzaList() {
+		return this.pizzaList;
 	}
 
-	public void addObserver(Delivery d) {
+	private void addObserver(Delivery d) {
 		this.delivery = d;
 	}
 	
@@ -26,17 +31,9 @@ public class Order {
 		return state;
 	}
 
-	public void setState(int state) {
-		this.state = state;
-		notifyObservers();
-	}
-
-	private void notifyObservers() {
+	private void notifyObservers(int state) {
+		this.state=state;
 		delivery.update(this);
-	}
-	
-	
-	
-	
+	}	
 
 }

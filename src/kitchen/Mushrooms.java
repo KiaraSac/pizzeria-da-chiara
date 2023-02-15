@@ -2,13 +2,18 @@ package kitchen;
 
 public class Mushrooms extends PizzaDecorator {
 
-	public Mushrooms(Ingredient i) {
-		super(i);
+	public Mushrooms(Pizza p) {
+		super(p);
+	}
+	
+	@Override
+	public String getDescription() {
+		return super.getDescription()+", Mushrooms";
 	}
 
-	@Override
-	public void addI() {
-		ingredient.getIngredientList().add(this);
-		this.ingredient.addI();
-	}
+//	@Override
+//	public void addIngredient() {
+//		ingredient.getIngredientList().add(this);
+//		this.ingredient.addIngredient();
+//	}
 }

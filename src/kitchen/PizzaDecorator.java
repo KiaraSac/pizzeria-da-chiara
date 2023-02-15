@@ -2,20 +2,27 @@ package kitchen;
 
 import java.util.Collection;
 
-public abstract class PizzaDecorator implements Ingredient {
+public class PizzaDecorator implements Pizza {
 
-	protected Ingredient ingredient;
+	protected Pizza pizza;
 	
-	public PizzaDecorator(Ingredient i) {
-		this.ingredient=i;
+	public PizzaDecorator(Pizza p) {
+		this.pizza=p;
 	}
 
 	@Override
-	public abstract void addI();	
-	
-	@Override
-	public Collection<Ingredient> getIngredientList() {
-		return ingredient.getIngredientList();
+	public String getDescription() {
+		return pizza.getDescription();
 	}
+	
+	
+//
+//	@Override
+//	public abstract void addIngredient();	
+//	
+//	@Override
+//	public Collection<Pizza> getIngredientList() {
+//		return ingredient.getIngredientList();
+//	}
 
 }
