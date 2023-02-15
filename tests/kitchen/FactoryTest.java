@@ -19,4 +19,13 @@ public class FactoryTest {
 		
 		assertEquals("Base Pizza, Tomato Souce, Mozzarella, Mushrooms", b.getDescription());		
 	}
+	
+	@Test
+	public void testFactoryIsNotTheSameObject() {
+		PizzaFactory factory = new MargheritaFactory();
+		Pizza p1= factory.createPizza();
+		Pizza p2= factory.createPizza();
+		
+		assertNotSame(p1, p2);
+	}
 }
