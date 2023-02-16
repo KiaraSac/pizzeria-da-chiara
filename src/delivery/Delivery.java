@@ -3,5 +3,11 @@ package delivery;
 import order.Order;
 
 public interface Delivery {
-	void update(Order order);
+	
+	//OBSERVable INTERFACE
+	void addObserver(Order o);
+	void removeObserver(Order o);
+	void notifyObservers();
+	String getState();
+	
 }

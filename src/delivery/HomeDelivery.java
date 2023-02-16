@@ -4,16 +4,15 @@ import java.util.List;
 
 import order.Order;
 
-public class TakeAway implements Delivery {
-	//OBSERVER
-	private String name;
-	private Order order;
-	private String state;
-	private List<Order> orders;
+public class HomeDelivery implements Delivery {
 
+	private String address;
+	private List<Order> orders;
+	private String state;
 	
-	public TakeAway(String n) {
-		this.name=n;
+	
+	public HomeDelivery(String address) {
+		this.address=address;
 	}
 
 	@Override
@@ -21,7 +20,6 @@ public class TakeAway implements Delivery {
 		return state;
 	}
 
-	
 	public void setState(String state) { //no public
 		this.state = state;
 	}
@@ -42,5 +40,7 @@ public class TakeAway implements Delivery {
 	public void notifyObservers() {
 		orders.forEach(o -> o.update(this));
 	}
+
+	
 
 }
