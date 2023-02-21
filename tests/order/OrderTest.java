@@ -1,38 +1,34 @@
 package order;
 
 import static org.junit.Assert.assertEquals;
-
-import java.util.Arrays;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import delivery.TakeAway;
-import kitchen.MargheritaFactory;
-import kitchen.Mozzarella;
+import kitchen.PizzaBaseFactory;
 import kitchen.Pizza;
-import kitchen.PizzaBaseGlutenFree;
-import kitchen.TomatoSouce;
+import kitchen.PizzaBase;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class OrderTest {
 
 	@Test
-	public void testOrder() {
+	public void testAddPizza() {
+		Pizza p = new PizzaBaseFactory().create();
+		Order o = new Order();
 		
-		Order o =new Order();
+		o.addPizza(p);
 		
-		o.addPizza(new Pizza() {
-			
-			@Override
-			public String getDescription() {
-				return "Pizza con le patatine";
-			}
-		});
+		assertThat(o.getPizzaList()).contains(p);
+	}
+	
+	@Test
+	public void testUpdate() {
+		Order o = new Order();
 		
+		o.update("in transit");
 		
-		assertEquals("Pizza con le patatine", o.getPizzaList().get(0).getDescription());
-		
-		Order p = new Order();
-		
+		assertThat(o.getDeliveryState()).isEqualTo("in transit");
 	}
 
 }

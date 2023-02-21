@@ -1,7 +1,7 @@
 package kitchen;
 
 public class Mushrooms extends PizzaDecorator {
-
+	//+2
 	public Mushrooms(Pizza p) {
 		super(p);
 	}

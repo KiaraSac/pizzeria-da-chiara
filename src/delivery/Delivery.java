@@ -1,13 +1,21 @@
 package delivery;
 
+import java.util.List;
+
 import order.Order;
 
 public interface Delivery {
-	
 	//OBSERVable INTERFACE
-	void addObserver(Order o);
+	
+//	String getState();
+	List<Order> getOrders();
+	
 	void removeObserver(Order o);
-	void notifyObservers();
-	String getState();
+
+	void addObserver(Order o);
+
+	void setState(String state);
+
+	
 	
 }

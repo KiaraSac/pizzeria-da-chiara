@@ -9,12 +9,9 @@ import kitchen.Pizza;
 
 public class Order {
 	//OBSERVer
-	//private Delivery delivery; //observer list
-	private boolean isDelivered;
+	private String deliveryState;
 	private List<Pizza> pizzaList;
 	
-	//private String orderState;
-
 	public Order() {
 		this.pizzaList = new ArrayList<>();
 	}
@@ -23,12 +20,16 @@ public class Order {
 		this.pizzaList.add(p);
 	}
 	
-	public List<Pizza> getPizzaList() {
+	List<Pizza> getPizzaList() {
 		return this.pizzaList;
 	}
 
-	public String update(Delivery d) {
-		return d.getState();
+	public String getDeliveryState() {
+		return deliveryState;
 	}
 
+	public void update(String state) {
+		deliveryState= state;
+	}
+ 
 }

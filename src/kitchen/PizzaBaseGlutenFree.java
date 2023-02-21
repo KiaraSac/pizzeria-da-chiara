@@ -1,8 +1,10 @@
 package kitchen;
 
-import java.util.Collection;
-
 public class PizzaBaseGlutenFree implements Pizza {
+
+	PizzaBaseGlutenFree() {
+
+	}
 
 	@Override
 	public String getDescription() {

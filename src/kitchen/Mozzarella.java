@@ -1,7 +1,7 @@
 package kitchen;
 
 public class Mozzarella extends PizzaDecorator {
-
+	//+0,5 euro
 	public Mozzarella(Pizza i) {
 		super(i);
 	}

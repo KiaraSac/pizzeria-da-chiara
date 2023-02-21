@@ -1,0 +1,10 @@
+*TEST*
+
+	In generale NON si dovrebbe MAI testare un metodo di una classe usando un altro
+	metodo della stessa classe (le uniche eccezioni sono ovviamente i getter e i setter che possono
+	essere utilizzati durante i test, se presenti nella classe).
+	
+TEST PER REMOVE
+	È fondamentale, NON usare add per inizializzare i contenuti, per quanto detto sopra. 
+	Per rendere il test più attendibile, inseriamo due elementi e ne
+	rimuoviamo uno, e poi verifichiamo che sia stato rimosso solo quello che ci interessa

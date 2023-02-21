@@ -1,7 +1,7 @@
 package kitchen;
 
 public class TomatoSouce extends PizzaDecorator {
-
+	//+1,5 euro
 	public TomatoSouce(Pizza p) {
 		super(p);
 	}
@@ -10,11 +10,5 @@ public class TomatoSouce extends PizzaDecorator {
 	public String getDescription() {
 		return super.getDescription()+", Tomato Souce";
 	}
-
-//	@Override
-//	public void addIngredient() {
-//		ingredient.getIngredientList().add(this);
-//		this.ingredient.addIngredient();
-//	}
 
 }
