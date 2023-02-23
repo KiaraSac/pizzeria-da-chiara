@@ -1,7 +1,7 @@
 package kitchen;
 
 public interface PizzaFactory {
-	
-	public Pizza create();	
+
+	public Pizza create();
 
 }

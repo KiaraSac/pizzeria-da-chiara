@@ -5,47 +5,25 @@ import java.util.List;
 
 import order.Order;
 
-public class HomeDelivery implements Delivery {
-
+public class HomeDelivery implements DeliveryMethod {
+	//CONCRETE STRATEGY
+	
 	private String address;
-	private List<Order> orders;
-	private String state; //potrebbe essere ENUM???
-	
-	public HomeDelivery(String address) {
-		orders=new ArrayList<>();
-		this.address=address;
-	}
-	
-	@Override
-	public List<Order> getOrders() {
-		return orders;
-	}
+//	String state; 
 
-//	@Override
-//	public String getState() {
+	public HomeDelivery(String address) {
+		this.address = address;
+	}
+	
+//	String getState() {
 //		return state;
 //	}
 
 	@Override
-	public void setState(String state) { //no public
-		this.state = state;
-		notifyObservers();
+	public String deliver() {
+		return "Consegna a domicilio all'indirizzo: " + this.address;
+		
 	}
-
-	@Override
-	public void addObserver(Order o) {
-		if(!orders.contains(o))
-			orders.add(o);
-	}
-
-	@Override
-	public void removeObserver(Order o) {
-		orders.remove(o);
-	}
-
 	
-	private void notifyObservers() {
-		orders.forEach(o -> o.update(this.state));
-	}
-
+	
 }

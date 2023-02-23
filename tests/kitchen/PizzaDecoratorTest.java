@@ -48,16 +48,38 @@ public class PizzaDecoratorTest {
 	}
 	
 	@Test
-	public void testPizzaDecorationAllTogheter() {
-
-		Pizza p = new Mozzarella(
-						new TomatoSouce(
-						new Mushrooms(
-						pizza)));
+	public void testMozzarellaGetPrice() {
+		Pizza p1 = new Mozzarella(pizza);
+		Pizza p2 = new Mozzarella(pizzaGlutenFree);
 		
-		assertThat(p.getDescription())
-				.isEqualTo("Base Pizza, Mushrooms, Tomato Souce, Mozzarella");
+		assertThat(p1.getPrice()).isEqualTo(5);
+		assertThat(p2.getPrice()).isEqualTo(5);
+	}
+	
+	@Test
+	public void testTomatoSouceGetPrice() {
+		Pizza p1 = new TomatoSouce(pizza);
+		Pizza p2 = new TomatoSouce(pizzaGlutenFree);
 		
+		assertThat(p1.getPrice()).isEqualTo(6);
+		assertThat(p2.getPrice()).isEqualTo(6);
+	}
+	
+	@Test
+	public void testMushroomsGetPrice() {
+		Pizza p1 = new Mushrooms(pizza);
+		Pizza p2 = new Mushrooms(pizzaGlutenFree);
+		
+		assertThat(p1.getPrice()).isEqualTo(6.5);
+		assertThat(p2.getPrice()).isEqualTo(6.5);
+	}
+	
+	@Test
+	public void testCompletePizza() {
+		Pizza p = new Mozzarella(new Mushrooms(new TomatoSouce(pizza)));
+		
+		assertThat(p.getPrice()).isEqualTo(8.5);
+		assertThat(p.getDescription()).isEqualTo("Base Pizza, Tomato Souce, Mushrooms, Mozzarella");
 	}
 	
 

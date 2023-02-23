@@ -30,4 +30,5 @@ public class FactoryTest {
 		
 		assertThat(p1).isNotSameAs(p2);
 	} 
+	
 }
