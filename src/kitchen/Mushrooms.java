@@ -13,6 +13,6 @@ public class Mushrooms extends PizzaDecorator {
 
 	@Override
 	public double getPrice() {
-		return super.getPrice()+2;
+		return super.getPrice() + 2;
 	}
 }

@@ -9,7 +9,7 @@ import kitchen.Mozzarella;
 import kitchen.Pizza;
 
 public class Order {
-	// OBSERVer
+	// OBSERVER
 	private String deliveryState;
 	private List<Pizza> pizzaList;
 
@@ -24,7 +24,7 @@ public class Order {
 	public String getDeliveryState() {
 		return this.deliveryState;
 	}
-	
+
 	public void addPizza(Pizza p) {
 		this.pizzaList.add(p);
 	}
@@ -32,5 +32,5 @@ public class Order {
 	public void update(String state) {
 		this.deliveryState = state;
 	}
-	
+
 }

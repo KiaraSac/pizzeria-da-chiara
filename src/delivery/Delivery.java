@@ -7,26 +7,25 @@ import java.util.function.IntPredicate;
 import order.Order;
 
 public class Delivery {
-	//SUBJECT NEW
-	//CONTEXT STRATEGY NEW
+	// SUBJECT
+	// CONTEXT STRATEGY
 	private DeliveryMethod deliveryMethod;
 	private List<Order> orders;
 	private String state;
-	
+
 	public Delivery(DeliveryMethod d) {
 		this();
-		this.deliveryMethod=d;
-		
+		this.deliveryMethod = d;
 	}
-	
-	Delivery (){
-		this.orders=new ArrayList<>();
+
+	Delivery() {
+		this.orders = new ArrayList<>();
 	}
-	
+
 	public void deliver() {
 		setState(deliveryMethod.deliver());
 	}
-	
+
 	public String getState() {
 		return state;
 	}
@@ -35,7 +34,7 @@ public class Delivery {
 		this.state = state;
 		notifyObservers();
 	}
-	
+
 	List<Order> getOrders() {
 		return orders;
 	}
@@ -47,7 +46,7 @@ public class Delivery {
 	public void removeObserver(Order o) {
 		orders.remove(o);
 	}
-	
+
 	private void notifyObservers() {
 		orders.forEach(o -> o.update(this.state));
 	}
